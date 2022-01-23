@@ -35,3 +35,7 @@
 .c3-css{
     width: 100% !important;
 }
+.card img{
+    height: 60px;
+    width:  60px;
+}
