@@ -39,3 +39,20 @@
     height: 60px;
     width:  60px;
 }
+.t-img{
+    width: 200px;
+    
+}
+.c-pinter{
+    cursor: pointer;
+}
+.t-c-h .col:hover{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    transition: .5s;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    border-radius: 30px;
+}
+.result h2{
+    display: inline;
+}

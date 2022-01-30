@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <!--age-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link rel="icon" type="image/x-icon" href="./img/logo.png">
+        <link rel="stylesheet" href="./css/style.css">
+      </head>
+    <body>
+      <!-- Start Nav Bar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <img src="./img/logo.png" alt="Blogpoka" class="navbar-brand main-logo">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="./index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./about.html">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./services.html">Services</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="./team.html">Team</a>
+                  </li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="./contact.html">Contact</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="./Age calculat.html">Age calculat</a>
+                </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="./login.html">Login</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="./signup.html">Sign Up</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <!-- End Nav Bar-->
+  <main>
+    <div class="container bg-danger text-white pt-5 pb-5 text-center">
+      <h1>Age Calculator</h1>
+      <div class="input-group date" data-provide="datepicker">
+        <input type="text" class="form-control myDate" placeholder="DD-MM-YYYY">
+        <div class="input-group-addon">
+            <span class="glyphicon glyphicon-th"></span>
+        </div>
+      </div>
+      <center><button id="result" class="btn btn-success mt-3 mb-3 w-100">Calculate</button></center>
+      <div class="result">
+        <h2 class="yourAge"></h2><h2 class="error"></h2>
+      </div>
+    </div>
+    <script>
+      function calculateAge(birthDate){
+        let year = new Date().getFullYear();
+        let currentAge = year - birthDate;
+        if(birthDate > year){
+          return "Error";
+        }
+        else{
+          return currentAge;
+        }
+      }
+
+      $('.datepicker').datepicker().on('change',function(){
+
+        $('.myDate').change();
+
+      });
+
+      $( "#result" ).click(function(e) {
+
+      e.preventDefault();
+
+      let myDate = $('.myDate').datepicker('getDate').getFullYear();
+
+      let age = calculateAge(myDate);
+      
+      $('.result .yourAge').html("Your Age Is: ");
+
+      $('.result .error').html(age);
+
+      });
+
+    </script>
+
+  </main>        
+</body>
+</html>
