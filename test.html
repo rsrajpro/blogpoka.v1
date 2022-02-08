@@ -20,7 +20,7 @@
         <div class="container mt-5">
             <input type="text" class="form-control indate" placeholder="Type Your Date of Brith">
             <button id="result" class="btn btn-primary mt-3 form-control">Submit</button>
-            <h2 class="result"></h2>
+            <h2 class="yourAge"></h2>
             <Script>
                 $('.indate').datepicker({
                     orientation: 'bottom',
@@ -33,36 +33,36 @@
                     e.preventDefault;
                     let inputClik = $('.indate').datepicker('getDate');
                     let ShowResult = calculateAge(inputClik);
-                    $('.result').html(ShowResult);
+                    $('.yourAge').html(ShowResult);
                 }
                 );
                 function calculateAge(inputDate){
 
                     let nowDate = new Date();
 
-                    let nowD = nowDate.getDate();
-                    let nowM = nowDate.getMonth() + 1;
-                    let nowY = nowDate.getFullYear();
+                    let nowDay = nowDate.getDate();
+                    let nowMonth = nowDate.getMonth() + 1;
+                    let nowYear = nowDate.getFullYear();
 
-                    let birthD = inputDate.getDate();
-                    let birthM = inputDate.getMonth() + 1;
-                    let birthY = inputDate.getFullYear();
+                    let birthDay = inputDate.getDate();
+                    let birthMonth = inputDate.getMonth() + 1;
+                    let birthYear = inputDate.getFullYear();
 
-                    if(nowD < BirthD){
-                       nowD = nowD + 30;
-                       nowM = nowM - 1;
+                    if(nowDay < birthDay){
+                       nowDay = nowDay + 30;
+                       nowMonth = nowMonth - 1;
                     }
-                    if(nowM < BirthM){
-                        nowM = nowM + 12;
-                        nowY = nowY - 1;
+                    if(nowMonth < birthMonth){
+                        nowMonth = nowMonth + 12;
+                        nowYear = nowYear - 1;
                     }
 
-                    let d = nowD - BirthD;
-                    let M = nowM - BirthM;
-                    let Y = nowY - BirthY;
+                    let nowAge = nowYear - birthYear;
+                    let ageMonth = nowMonth - birthMonth;
+                    let ageDay = nowDay - birthDay;
 
-                    let result = "Your Age is" +D+ " Day" +M+ " Month" +Y+ " Year"
-                    
+                    let result = "Your Age is " +nowAge+ " Year, " +ageMonth+ " Month, " +ageDay+ " Days."
+
                     return result;
                 }
             </Script>
