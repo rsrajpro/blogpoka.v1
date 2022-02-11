@@ -56,3 +56,38 @@
 .result h2{
     display: inline;
 }
+.c-5 ul li{
+    margin-left:20px ;
+    font-size: 18px;
+    
+}
+.c-5 ul li a{
+    text-decoration: none;
+    color: rgb(163, 162, 177);
+}
+.c-5 ul li a:hover{
+    color: rgb(255, 255, 255);
+}
+.c-c{
+    background-color: black;
+    color: #fff;
+    padding: 10px;
+    text-align: center;;
+}
+.border-none{
+    border: none !important;
+}
+.c-border{
+    border-bottom: 3px dotted white;
+    padding-bottom: 10px;
+}
+.b-t-b{
+    border: 3px solid rgb(108, 161, 231) ;
+}
+.bg-dark-light{
+    background-color: rgba(163, 167, 172, 0.178);
+}
+.ab-t-c-h:hover{
+    color: rgb(108, 161, 231);
+    cursor: pointer;
+}
