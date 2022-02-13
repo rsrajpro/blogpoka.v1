@@ -10,13 +10,13 @@
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>BlogPoka - Sign up</title>
+        <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        <link rel="icon" type="image/x-icon" href="./img/logo.png">
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <link rel="icon" type="image/x-icon" href="./img/logo.png">
         <link rel="stylesheet" href="./css/style.css">
     </head>
     <body>
@@ -50,10 +50,10 @@
                 <a class="nav-link" href="./Age calculat.html">Age calculat</a>
             </li>
               <li class="nav-item">
-                  <a class="nav-link" href="./login.html">Login</a>
+                  <a class="nav-link active" href="./login.html">Login</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link active" href="./signup.html">Sign Up</a>
+                  <a class="nav-link" href="./signup.html">Sign Up</a>
               </li>
             </ul>
           </div>
@@ -62,20 +62,19 @@
     <main>
       <div class="container mt-5 mb-5">
         <div class="row d-flex">
-          <div class="col-md-6 align-self-center"><img class="img-fluid" src="./img/BlogPoka-sign up.png" alt=""></div>
+          <div class="col-md-6 align-self-center"><img class="img-fluid" src="./img/BlogPoka-login.png" alt=""></div>
           <div class="col-md-6 ">
-            <form class="">
+            <form method="post" action="action.php">
               <div class="pt-5 text-center">
                 <img src="./img/logo.png" alt="logo" style="height: 80px;" class="mb-2">
-                <h1 class="text-uppercase">Sign up</h1>
-                <p class="pb-4">Sign up into your Account</p>
+                <h1>Login</h1>
+                <p class="pb-4">Login into your Account</p>
               </div>
-              <input class="p-2 form-control fs-5" type="text" placeholder="Full Name"><br>
-              <input class="p-2 form-control fs-5" type="email" placeholder="Email"><br>
-              <input class="p-2 form-control fs-5" type="text" placeholder="Phone Number"><br>
-              <input Class="p-2 form-control fs-5" type="password" placeholder="Password"><br>
-              <input Class="p-2 form-control fs-5" type="password" placeholder="Re-Password"><br>
-              <button type="submit" class="fs-5 btn btn-primary form-control mb-5">Sign UP</button>
+              
+                <input class="p-2 form-control fs-5" type="text" placeholder="Email" name="username"><br>
+              <input Class="p-2 form-control fs-5" type="password" placeholder="Password" name="password"><br>
+              <button type="submit" class="fs-5 btn btn-dark form-control mb-5" name="submit">Login</button>
+            
             </form>
           </div>
         </div>

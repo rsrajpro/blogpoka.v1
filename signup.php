@@ -1,3 +1,44 @@
+<?php
+
+$database = new mysqli("localhost","root","","blogpoka.v1");
+
+if ($database->connect_error) {
+    die("Connection failed: " . $database->connect_error);
+}
+
+if(isset($_POST['reg'])){
+    $fullname = $_REQUEST['fullname'];
+    $email = $_REQUEST['email'];
+    $phone = $_REQUEST['phone'];
+    $password = md5($_REQUEST['password']);
+    $repassword = md5($_REQUEST['repassword']);
+
+    if($password !== $repassword){
+      $error = "Password Did Not Match";
+    }
+    else{
+      if($fullname !== "" || $email !== "" || $password !== ""){
+        
+        $query = "INSERT INTO `user`(`fullname`, `email`, `phone`, `password`) VALUES ('$fullname','$email','$phone','$password')";
+
+        $excute = $database->query($query);
+
+        if($excute == True){
+          $sucess = "User Created Successfully!";
+        }
+        else{
+          $error = "Something Went wrong";
+        }
+      }
+      else{
+        $error = "Fields are required";
+      }
+    }
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,13 +51,13 @@
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>BlogPoka - Sign up</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
         <link rel="icon" type="image/x-icon" href="./img/logo.png">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
         <link rel="stylesheet" href="./css/style.css">
     </head>
     <body>
@@ -50,10 +91,10 @@
                 <a class="nav-link" href="./Age calculat.html">Age calculat</a>
             </li>
               <li class="nav-item">
-                  <a class="nav-link active" href="./login.html">Login</a>
+                  <a class="nav-link" href="./login.html">Login</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="./signup.html">Sign Up</a>
+                  <a class="nav-link active" href="./signup.html">Sign Up</a>
               </li>
             </ul>
           </div>
@@ -62,20 +103,27 @@
     <main>
       <div class="container mt-5 mb-5">
         <div class="row d-flex">
-          <div class="col-md-6 align-self-center"><img class="img-fluid" src="./img/BlogPoka-login.png" alt=""></div>
+          <div class="col-md-6 align-self-center"><img class="img-fluid" src="./img/BlogPoka-sign up.png" alt=""></div>
           <div class="col-md-6 ">
-            <form class="">
+            <form class="" action="" method="post">
               <div class="pt-5 text-center">
                 <img src="./img/logo.png" alt="logo" style="height: 80px;" class="mb-2">
-                <h1>Login</h1>
-                <p class="pb-4">Login into your Account</p>
+                <h1 class="text-uppercase">Sign up</h1>
+                <p class="pb-4">Sign up into your Account</p>
               </div>
-              <form action="action.php">
-                <input class="p-2 form-control fs-5" type="text" placeholder="Email"><br>
-              <input Class="p-2 form-control fs-5" type="password" placeholder="Password"><br>
-              <button type="submit" class="fs-5 btn btn-dark form-control mb-5">Login</button>
+              <input class="p-2 form-control shadow-none fs-5" type="text" placeholder="Full Name*" name="fullname" required><br>
+              <input class="p-2 form-control shadow-none fs-5" type="email" placeholder="Email*" name="email" required><br>
+              <input class="p-2 form-control shadow-none fs-5" type="text" placeholder="Phone Number" name="phone"><br>
+              <input Class="p-2 form-control shadow-none fs-5" type="password" placeholder="Password*" name="password" required><br>
+              <input Class="p-2 form-control shadow-none fs-5" type="password" placeholder="Re-Password*" name="repassword"><br>
+              <button type="submit" class="shadow-none fs-5 btn btn-outline-success form-control mb-5" name="reg">Sign UP</button>
             </form>
-            </form>
+            <h5 class="text-danger mt-2">
+              <?php if(!empty($error)){echo $error;}?>
+              </h5>
+              <h5 class="text-success mt-2">
+              <?php if(!empty($sucess)){echo $sucess;}?>
+              </h5>
           </div>
         </div>
       </div>

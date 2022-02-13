@@ -7,9 +7,14 @@ if ($database->connect_error) {
 }
 
 
+if ($database->connect_error) {
+    die("Connection failed: " . $database->connect_error);
+}
+
+
 if(isset($_POST['submit'])){
     $user = $_POST['username'];
-    $pass = $_POST['password'];
+    $pass = md5($_POST['password']);
 
     $query = "SELECT * FROM `user` WHERE `email` = '$user' and `password` = '$pass'";
 
@@ -23,5 +28,4 @@ if(isset($_POST['submit'])){
     else{
         echo 'You are not logged in';
     }
-
 }
