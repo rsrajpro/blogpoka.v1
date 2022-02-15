@@ -1,35 +1,31 @@
 <?php
-  $pagetitle = "Login - Blogpoka";
+  $pagetitle = "Contact US";
   include('header.php');
 
 ?>
-
-      <style>
-        form{
-          background: #f0f0f0;
-          padding: 20px;
-        }
-      </style>
     <main>
-      <div class="container mt-5 mb-5">
-        <div class="row d-flex">
-          <div class="col-md-6 align-self-center"><img class="img-fluid" src="./img/BlogPoka-login.png" alt=""></div>
-          <div class="col-md-6 ">
-            <form method="post" action="action.php">
-              <div class="pt-5 text-center">
-                <img src="./img/logo.png" alt="logo" style="height: 80px;" class="mb-2">
-                <h1>Login</h1>
-                <p class="pb-4">Login into your Account</p>
-              </div>
-              
-                <input class="p-2 form-control fs-5" type="text" placeholder="Email" name="username"><br>
-              <input Class="p-2 form-control fs-5" type="password" placeholder="Password" name="password"><br>
-              <button type="submit" class="fs-5 btn btn-dark form-control mb-5" name="submit">Login</button>
-            
-            </form>
-          </div>
+      <div class="container-fluid bg-primary text-white pt-5 pb-5 text-center">
+        <h1 class="c-border d-inline text-uppercase fw-bold">Contact US</h1>
+      </div>
+    <!--Start contact us -->
+    <div class="container">
+      <div class="row row-cols-1 row-cols-lg-2">
+        <div class="col bg-light mt-3">
+          <form action="" class="mt-5">
+            <input type="text" placeholder="Name" class="p-2 text-danger fs-5 form-control border-none"><br>
+            <input type="email" placeholder="Email" class="p-2 fs-5 form-control border-none"><br>
+            <input type="text" placeholder="Subject" class="p-2 fs-5 form-control border-none"><br>
+            <textarea name="message" class="fs-5 form-control border-none" cols="30" rows="10" placeholder="Message"></textarea><br>
+            <button class="btn btn-primary form-control mb-4">Send</button>
+          </form>
+        </div>
+        <div class="col">
+          <!--Map Code-->
         </div>
       </div>
+    </div>
+    <!--End contact us -->
+
     </main>
     <footer class="mt-5">
       <div class="container-fluid bg-dark text-light">
@@ -63,5 +59,5 @@
       </div>
       <div class="c-c">© 2022 blogpoka.com . All Rights Reserved.</div>
     </footer>
-  </body>
-  </html>
+    </body>
+</html>
