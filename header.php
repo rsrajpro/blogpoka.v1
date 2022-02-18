@@ -24,31 +24,31 @@
               <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                    <a class="nav-link <?php if ($pagetitle == "Home") {echo 'active';} ?>" href="./index.php">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="./about.php">About Us</a>
+                    <a class="nav-link <?php if ($pagetitle == "About US") {echo 'active';} ?>" href="./about.php">About Us</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="./services.php">Services</a>
+                    <a class="nav-link <?php if ($pagetitle == "Services") {echo 'active';} ?>" href="./services.php">Services</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="./team.php">Team</a>
+                      <a class="nav-link <?php if ($pagetitle == "Team") {echo 'active';} ?>" href="./team.php">Team</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="./account.html">Account</a>
+                    <a class="nav-link <?php if ($pagetitle == "Account") {echo 'active';} ?>" href="./account.php">Account</a>
                 </li>
                   <li class="nav-item">
-                  <a class="nav-link" href="./contact.php">Contact</a>
+                  <a class="nav-link <?php if ($pagetitle == "Contact US") {echo 'active';} ?>" href="./contact.php">Contact</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="./Age calculat.html">Age calculat</a>
+                    <a class="nav-link <?php if ($pagetitle == "Age calculate") {echo 'active';} ?>" href="./Age calculat.php">Age calculat</a>
                 </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="./login.php">Login</a>
+                      <a class="nav-link <?php if ($pagetitle == "Login - Blogpoka") {echo 'active';} ?>" href="./login.php">Login</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="./signup.php">Sign Up</a>
+                      <a class="nav-link <?php if ($pagetitle == "SignUp - Blogpoka") {echo 'active';} ?>" href="./signup.php">Sign Up</a>
                   </li>
                 </ul>
               </div>

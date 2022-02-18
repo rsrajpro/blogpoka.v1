@@ -1,6 +1,6 @@
 <?php
 
-$pagetitle = "SignUP";
+$pagetitle = "SignUp - Blogpoka";
 include('header.php');
 
 $database = new mysqli("localhost","root","","blogpoka.v1");
